@@ -27,7 +27,7 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Hello world!')),
+      body: Center(child: Text('Create new branch')),
     );
   }
 }

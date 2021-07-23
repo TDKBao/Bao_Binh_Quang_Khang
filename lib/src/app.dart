@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/src/screens/onboarding.dart';
+
+import 'screens/onboarding_screen.dart';
+import 'screens/login_screen.dart';
+import 'screens/sigup_screen.dart';
 
 class App extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
         '/': (context) => OnBoardingScreen(),
+        '/login': (context) => LoginScreen(),
+        '/sign-up': (context) => SignUpSreen(),
       },
       // theme: ThemeData(
       //   primarySwatch: Colors.blue,

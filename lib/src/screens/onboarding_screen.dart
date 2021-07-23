@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/src/responsive.dart';
+
+import '../responsive.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -17,9 +18,9 @@ class OnBoardingScreen extends StatelessWidget {
                 fit: BoxFit.none,
                 scale: 0.99)),
         child: GestureDetector(
-          // onTap: () {
-          //   Navigator.of(context).pushNamed('/login');
-          // },
+          onTap: () {
+            Navigator.of(context).pushNamed('/login');
+          },
           child: Center(
             child: Container(
               decoration: BoxDecoration(

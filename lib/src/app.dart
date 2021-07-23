@@ -7,7 +7,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/':(context) => OnBoardingScreen(),
+        '/': (context) => OnBoardingScreen(),
       },
       // theme: ThemeData(
       //   primarySwatch: Colors.blue,
@@ -15,4 +15,4 @@ class App extends StatelessWidget {
       // home: OnBoardingScreen(),
     );
   }
-} 
+}

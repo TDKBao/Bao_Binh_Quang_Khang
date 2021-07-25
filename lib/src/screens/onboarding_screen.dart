@@ -41,7 +41,10 @@ class OnBoardingScreen extends StatelessWidget {
                   ])),
               height: double.infinity,
               // width: double.infinity,
-              child: Logo(),
+              child: Logo(
+                onboardingScreen: true,
+                tabletScreen: false,
+              ),
             ),
           ),
         ),
@@ -76,7 +79,10 @@ class OnBoardingScreen extends StatelessWidget {
                   SizedBox(
                     height: 79.15,
                   ),
-                  Logo(),
+                  Logo(
+                    onboardingScreen: true,
+                    tabletScreen: true,
+                  ),
                   Spacer(),
                   Text(
                     OnBoarding.titleOnboarding,

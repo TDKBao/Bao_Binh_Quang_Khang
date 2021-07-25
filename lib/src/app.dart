@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'screens/onboarding_screen.dart';
 import 'screens/login_screen.dart';
-import 'screens/sigup_screen.dart';
+import 'screens/signup_screen.dart';
 
 class App extends StatelessWidget {
   @override
@@ -13,13 +13,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       routes: {
         // '/': (context) => OnBoardingScreen(),
-        '/': (context) => LoginScreen(),
-        '/sign-up': (context) => SignUpSreen(),
+         '/Login': (context) => LoginScreen(),
+        '/': (context) => SignUpSreen(),
       },
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      // ),
-      // home: OnBoardingScreen(),
+      
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SigUp {
- static const title = Color(0x030F09);
+class SignUp {
+ static const title = Color(0xff030F09);
+ 
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:mobile_app/src/widgets/logo.dart';
+import '../widgets/logo.dart';
+import '../constants/constants_text.dart';
 
-class ForgotPassword extends StatelessWidget {
+class ForgotPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,6 +13,9 @@ class ForgotPassword extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 65,
+              ),
               Logo(
                 onboardingScreen: false,
                 tabletScreen: false,
@@ -19,7 +23,7 @@ class ForgotPassword extends StatelessWidget {
               SizedBox(
                 height: 41,
               ),
-              Text("Reset password",
+              Text(ForgotPassword.titleResetPassword,
                   style: Theme.of(context)
                       .textTheme
                       .headline4
@@ -27,15 +31,14 @@ class ForgotPassword extends StatelessWidget {
               SizedBox(
                 height: 29.12,
               ),
-              Text(
-                  "Enter the email associated with your account and we'll send and email with a link to reset your password.",
+              Text(ForgotPassword.subtitleResetPassword,
                   style: Theme.of(context)
                       .textTheme
                       .subtitle1
                       ?.copyWith(fontSize: 15)),
               Spacer(),
               Text(
-                'Email address',
+                ForgotPassword.emailAddress,
                 style: Theme.of(context).textTheme.subtitle1!.copyWith(
                     fontFamily: 'Nunito',
                     color: Color(0xffA8A8A8),
@@ -71,7 +74,7 @@ class ForgotPassword extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8))),
                   onPressed: () {},
                   child: Text(
-                    'Send',
+                    ForgotPassword.buttonSend,
                     style: Theme.of(context)
                         .textTheme
                         .headline5

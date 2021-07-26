@@ -10,19 +10,23 @@ class Logo extends StatelessWidget {
   Widget build(BuildContext context) {
     double widthLogo;
     double heightLogo;
+    var alignmentText = MainAxisAlignment.start;
     if (onboardingScreen) {
       widthLogo = 25;
       heightLogo = 36;
+      alignmentText = MainAxisAlignment.center;
     }
     if (tabletScreen) {
       widthLogo = 17;
       heightLogo = 25;
+      alignmentText = MainAxisAlignment.center;
+
     } else {
       widthLogo = 18;
       heightLogo = 26;
     }
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: alignmentText,
       children: [
         Image(
           image: AssetImage("assets/icons/logoicon.png"),

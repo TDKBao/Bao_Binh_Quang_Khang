@@ -202,7 +202,7 @@ class BoxSignUp extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     )),
                   ),
-                  onPressed: () => {Navigator.of(context).pushNamed('/Login')},
+                  onPressed: () => {Navigator.of(context).pushNamed('/login')},
                   child: Text(
                    SignUpText.buttonCreateAccount,
                     style: Theme.of(context).textTheme.subtitle1!.copyWith(

@@ -12,9 +12,9 @@ class App extends StatelessWidget {
         SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
       routes: {
-        // '/': (context) => OnBoardingScreen(),
-         '/Login': (context) => LoginScreen(),
-        '/': (context) => SignUpSreen(),
+        //  '/': (context) => OnBoardingScreen(),
+        //  '/Login': (context) => LoginScreen(),
+         '/': (context) => SignUpSreen(),
       },
       
     );

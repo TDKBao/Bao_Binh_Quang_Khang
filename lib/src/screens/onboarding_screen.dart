@@ -40,20 +40,20 @@ class OnBoardingScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(
-                    image: AssetImage("assets/icons/logoicon.png"),
+                    image: AssetImage("assets/icons/Logo_screen.png"),
                     width: 25.24,
                     height: 36.21,
                   ),
-                  SizedBox(
-                    width: 23.26,
-                  ),
-                  Text(
-                    "scratch",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline6
-                        ?.copyWith(fontWeight: FontWeight.normal),
-                  ),
+                  // SizedBox(
+                  //   width: 23.26,
+                  // ),
+                  // Text(
+                  //   "scratch",
+                  //   style: Theme.of(context)
+                  //       .textTheme
+                  //       .headline6
+                  //       ?.copyWith(fontWeight: FontWeight.normal),
+                  // ),
                 ],
               ),
             ),
@@ -84,20 +84,20 @@ class OnBoardingScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image(
-                      image: AssetImage("assets/icons/logoicon.png"),
+                      image: AssetImage("assets/icons/Logo_screen.png"),
                       width: 25.24,
                       height: 36.21,
                     ),
-                    SizedBox(
-                      width: 23.26,
-                    ),
-                    Text(
-                      "Scratch",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline6
-                          ?.copyWith(fontWeight: FontWeight.normal),
-                    ),
+                    // SizedBox(
+                    //   width: 23.26,
+                    // ),
+                    // Text(
+                    //   "Scratch",
+                    //   style: Theme.of(context)
+                    //       .textTheme
+                    //       .headline6
+                    //       ?.copyWith(fontWeight: FontWeight.normal),
+                    // ),
                   ],
                 ),
                 // Spacer(),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/src/constants/constaint.dart';
+import 'package:mobile_app/src/constants/constants_color.dart';
 
 import '../widgets/responsive.dart';
 import '../widgets/logo.dart';

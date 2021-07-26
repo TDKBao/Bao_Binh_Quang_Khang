@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../responsive.dart';
+import '../widgets/responsive.dart';
+import '../widgets/logo.dart';
+import '../constants/constants_text.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -24,7 +26,7 @@ class LoginScreen extends StatelessWidget {
                     top: 138,
                     left: 25,
                     child: Text(
-                      'Welcome Back!',
+                     LoginText.titleWelcome,
                       style: Theme.of(context).textTheme.headline5!.copyWith(
                           fontFamily: 'Nunito',
                           fontWeight: FontWeight.bold,
@@ -33,26 +35,10 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 63,
-                    left: 25,
-                    child: Image.asset(
-                      'assets/icons/logoicon.png',
-                      width: 18,
-                      height: 26,
-                    ),
-                  ),
-                  Positioned(
-                    top: 62,
-                    left: 53,
-                    child: Text(
-                      'scratch',
-                      style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xff363837),
-                          fontSize: 21),
-                    ),
-                  ),
+                      top: 63,
+                      left: 25,
+                      child:
+                          Logo(onboardingScreen: false, tabletScreen: false)),
                 ],
               ),
               Padding(
@@ -61,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Please login to continue.',
+                      LoginText.subTitleLogin,
                       style: Theme.of(context).textTheme.subtitle1!.copyWith(
                           fontFamily: 'Nunito',
                           color: Color(0xff606060),
@@ -71,7 +57,7 @@ class LoginScreen extends StatelessWidget {
                       height: 52,
                     ),
                     Text(
-                      'Email address',
+                      LoginText.email,
                       style: Theme.of(context).textTheme.subtitle1!.copyWith(
                           fontFamily: 'Nunito',
                           color: Color(0xffA8A8A8),
@@ -103,7 +89,7 @@ class LoginScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Password',
+                          LoginText.password,
                           style: Theme.of(context)
                               .textTheme
                               .subtitle1!
@@ -113,7 +99,7 @@ class LoginScreen extends StatelessWidget {
                                   fontSize: 14),
                         ),
                         Text(
-                          'Forgot password?',
+                          LoginText.forgotPassword,
                           style: Theme.of(context)
                               .textTheme
                               .subtitle1!
@@ -162,7 +148,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         onPressed: () => {},
                         child: Text(
-                          'Login',
+                         LoginText.buttonLogin,
                           style:
                               Theme.of(context).textTheme.subtitle1!.copyWith(
                                     fontFamily: 'Nunito',
@@ -180,7 +166,7 @@ class LoginScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(
-                            'New to Scratch?',
+                            LoginText.subTitleSignUp,
                             style:
                                 Theme.of(context).textTheme.subtitle1!.copyWith(
                                       fontFamily: 'Nunito',
@@ -192,7 +178,7 @@ class LoginScreen extends StatelessWidget {
                             height: 5,
                           ),
                           Text(
-                            'Create Account Here',
+                           LoginText.buttonSignUp,
                             style:
                                 Theme.of(context).textTheme.subtitle1!.copyWith(
                                       fontFamily: 'Nunito',
@@ -226,32 +212,12 @@ class LoginScreen extends StatelessWidget {
                 Spacer(
                   flex: 3,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/icons/logoicon.png',
-                      width: 30,
-                      height: 38,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'scratch',
-                      style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                          fontFamily: 'Nunito-Bold',
-                          // fontWeight: FontWeight.bold,
-                          color: Color(0xff363837),
-                          fontSize: 31),
-                    ),
-                  ],
-                ),
+                Logo(onboardingScreen: false, tabletScreen: true),
                 Spacer(
                   flex: 5,
                 ),
                 Text(
-                  'Welcome Back!',
+                  LoginText.titleWelcome,
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                       fontFamily: 'Nunito-Bold',
                       // fontWeight: FontWeight.bold,
@@ -272,7 +238,7 @@ class LoginScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Please login to continue.',
+                         LoginText.subTitleLogin,
                           style: Theme.of(context)
                               .textTheme
                               .subtitle1!
@@ -285,7 +251,7 @@ class LoginScreen extends StatelessWidget {
                           height: 55,
                         ),
                         Text(
-                          'Email address',
+                          LoginText.email,
                           style: Theme.of(context)
                               .textTheme
                               .subtitle1!
@@ -323,7 +289,7 @@ class LoginScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Password',
+                             LoginText.password,
                               style: Theme.of(context)
                                   .textTheme
                                   .subtitle1!
@@ -333,7 +299,7 @@ class LoginScreen extends StatelessWidget {
                                       fontSize: 23),
                             ),
                             Text(
-                              'Forgot password?',
+                              LoginText.forgotPassword,
                               style: Theme.of(context)
                                   .textTheme
                                   .subtitle1!
@@ -383,7 +349,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                             onPressed: () => {},
                             child: Text(
-                              'Login',
+                              LoginText.buttonLogin,
                               style: Theme.of(context)
                                   .textTheme
                                   .subtitle1!
@@ -403,7 +369,7 @@ class LoginScreen extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                'New to Scratch?',
+                                LoginText.subTitleLogin,
                                 style: Theme.of(context)
                                     .textTheme
                                     .subtitle1!
@@ -417,7 +383,7 @@ class LoginScreen extends StatelessWidget {
                                 height: 7,
                               ),
                               Text(
-                                'Create Account Here',
+                               LoginText.buttonSignUp,
                                 style: Theme.of(context)
                                     .textTheme
                                     .subtitle1!

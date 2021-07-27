@@ -1,18 +1,10 @@
-class OnBoarding {
- 
-}
+class OnBoarding {}
 
-class ForgotPassword {
- 
-}
+class ForgotPassword {}
 
-class SignUpText {
-  
-}
+class SignUpText {}
 
-class LoginText {
-
-}
+class LoginText {}
 
 class AppConstants {
   static const String fontRegular = "Nunito-Reqular";

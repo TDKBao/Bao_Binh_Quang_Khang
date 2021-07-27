@@ -29,7 +29,7 @@ class Logo extends StatelessWidget {
       mainAxisAlignment: alignmentText,
       children: [
         Image(
-          image: AssetImage("assets/icons/logoicon.png"),
+          image: AssetImage("assets/icons/logo.png"),
           width: widthLogo,
           height: heightLogo,
         ),

@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
-import '../responsive.dart';
+import '../widgets/responsive.dart';
+import '../constants/constants_text.dart';
+import '../widgets/logo.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double widthsizebutton = 239;
+    double heightsizebutton = 50;
+
     return Responsive(
       mobile: Container(
-        height: double.infinity,
-        width: double.infinity,
+        // height: double.infinity,
+        // width: double.infinity,
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/images/backgroundloading.png'),
@@ -35,110 +40,120 @@ class OnBoardingScreen extends StatelessWidget {
                     Colors.white.withOpacity(0.5),
                   ])),
               height: double.infinity,
-              width: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image(
-                    image: AssetImage("assets/icons/logoicon.png"),
-                    width: 25.24,
-                    height: 36.21,
-                  ),
-                  SizedBox(
-                    width: 23.26,
-                  ),
-                  Text(
-                    "scratch",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline6
-                        ?.copyWith(fontWeight: FontWeight.normal),
-                  ),
-                ],
+              // width: double.infinity,
+              child: Logo(
+                onboardingScreen: true,
+                tabletScreen: false,
               ),
             ),
           ),
         ),
       ),
       tablet: Container(
+        width: double.infinity,
         decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Colors.white.withOpacity(1),
-              Colors.white.withOpacity(1)
-            ]),
             image: DecorationImage(
-              image: AssetImage('assets/images/backgroundloading.png'),
-              alignment: Alignment.bottomCenter,
-              fit: BoxFit.cover,
-            )),
+          image: AssetImage('assets/images/backgroundloading.png'),
+          alignment: Alignment(0, 2.5),
+          fit: BoxFit.none,
+          scale: 0.5,
+        )),
         child: SafeArea(
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 79.15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image(
-                      image: AssetImage("assets/icons/logoicon.png"),
-                      width: 25.24,
-                      height: 36.21,
-                    ),
-                    SizedBox(
-                      width: 23.26,
-                    ),
-                    Text(
-                      "Scratch",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline6
-                          ?.copyWith(fontWeight: FontWeight.normal),
-                    ),
-                  ],
-                ),
-                // Spacer(),
-                Text(
-                  'Join over 50 millions people\n sharing recipes everyday',
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline2
-                      ?.copyWith(fontSize: 40, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  'Never run out of ideas again. Try new foods,\n ingredients, cooking style, and more',
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                      fontWeight: FontWeight.normal, color: Colors.grey),
-                ),
-                Row(
-                  children: [
-                    TextButton(
-                      style: TextButton.styleFrom(
-                          backgroundColor: Color(0x30be76),
-                          minimumSize: Size(239, 50)),
-                      onPressed: () {},
-                      child: Text(
-                        "Join Scracth",
-                        style: Theme.of(context)
-                            .textTheme
-                            .button
-                            ?.copyWith(color: Colors.white),
-                      ),
-                    ),
-                    OutlinedButton(
-                        style: OutlinedButton.styleFrom(
-                          side: BorderSide(color: Color(0x30be76), width: 1),
+            child: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                    Colors.white,
+                    Colors.white.withOpacity(1),
+                    Colors.white.withOpacity(1),
+                    Colors.white.withOpacity(0.7),
+                    Colors.white.withOpacity(0.6),
+                  ])),
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 79.15,
+                  ),
+                  Logo(
+                    onboardingScreen: true,
+                    tabletScreen: true,
+                  ),
+                  Spacer(),
+                  Text(
+                    OnBoarding.titleOnboarding,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headline2?.copyWith(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff030F09),
+                        fontFamily: 'Nunito-SemiBold'),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    OnBoarding.subtitleOnBoarding,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                        fontWeight: FontWeight.normal,
+                        fontFamily: 'Nunito-Regular',
+                        color: Color(0xffA8A8A8)),
+                  ),
+                  SizedBox(
+                    height: 34,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextButton(
+                        style: TextButton.styleFrom(
+                          backgroundColor: Color(0xff30be76),
+                          minimumSize: Size(widthsizebutton, heightsizebutton),
                         ),
-                        onPressed: () {},
-                        child: Text("Learn more"))
-                  ],
-                )
-              ],
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/login');
+                        },
+                        child: Text(
+                          OnBoarding.buttonJoinScracth,
+                          style: Theme.of(context).textTheme.button?.copyWith(
+                                color: Colors.white,
+                                fontFamily: 'Nunito-Bold',
+                              ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            minimumSize:
+                                Size(widthsizebutton, heightsizebutton),
+                            side: BorderSide(
+                              color: Color(0xff30be76),
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/login');
+                          },
+                          child: Text(OnBoarding.buttonLearnMore,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .button
+                                  ?.copyWith(
+                                      color: Color(0xff30be76),
+                                      fontFamily: 'Nunito-Bold')))
+                    ],
+                  ),
+                  Spacer(
+                    flex: 2,
+                  )
+                ],
+              ),
             ),
           ),
         ),

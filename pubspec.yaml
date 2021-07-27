@@ -27,7 +27,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  flutter_svg: ^0.22.0
+  firebase_auth: ^3.0.1
+  firebase_core: ^1.4.0
+  flutter_bloc: ^7.0.1
+  equatable: ^2.0.3
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +66,8 @@ flutter:
     - family: Nunito
       fonts:
         - asset: assets/fonts/Nunito-Regular.ttf
+        - asset: assets/fonts/Nunito-Bold.ttf
+        - asset: assets/fonts/Nunito-SemiBold.ttf
         - asset: assets/fonts/Nunito-Italic.ttf
           style: italic
         - asset: assets/fonts/Nunito-Bold.ttf

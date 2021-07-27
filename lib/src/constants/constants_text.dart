@@ -39,6 +39,7 @@ class LoginText {
 }
 
 class AppConstants {
+  static const String fontBasic = "Nunito";
   static const String fontRegular = "Nunito-Reqular";
   static const String fontBlack = "Nunito-Black";
   static const String fontBlackItalic = "Nunito-BlackItalic";

@@ -1,13 +1,12 @@
-class OnBoarding {
-  static const String titleOnboarding =
-      "Join over 50 millions people\n sharing recipes everyday";
-  static const String subtitleOnBoarding =
-      'Never run out of ideas again. Try new foods,\n ingredients, cooking style, and more';
-  static const String buttonJoinScracth = "Join Scratch";
-  static const String buttonLearnMore = "Learn more";
-}
+class OnBoarding {}
 
-class ForgotPassword {}
+class ForgotPassword {
+  static const String titleResetPassword = "Reset password";
+  static const String subtitleResetPassword =
+      "Enter the email associated with your account and we'll send and email with a link to reset your password.";
+  static const String emailAddress = "Enail address";
+  static const String buttonSend = "Send";
+}
 
 class SignUpText {}
 

@@ -18,7 +18,7 @@ class App extends StatelessWidget {
         // '/signup': (context) => SignUpScreen(),
         // '/forgotpassword': (context) => ForgotPasswordScreen(),
 
-        '/': (context) => OnBoardingScreen(),
+        '/': (context) => ForgotPasswordScreen(),
       },
     );
   }

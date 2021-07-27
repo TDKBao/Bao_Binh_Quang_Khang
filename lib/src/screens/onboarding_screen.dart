@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/responsive.dart';
 import '../constants/constants_text.dart';
+import '../constants/constants_color.dart';
 import '../widgets/logo.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -11,11 +12,13 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double widthsizebutton = 239;
     double heightsizebutton = 50;
+    Color mainSectionColor = Colors.white;
+    double mainSectionSpacing = 8;
 
     return Responsive(
       mobile: Container(
-        // height: double.infinity,
-        // width: double.infinity,
+        height: double.infinity,
+        width: double.infinity,
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/images/backgroundloading.png'),
@@ -33,11 +36,11 @@ class OnBoardingScreen extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                    Colors.white,
-                    Colors.white.withOpacity(1),
-                    Colors.white.withOpacity(1),
-                    Colors.white.withOpacity(0.8),
-                    Colors.white.withOpacity(0.5),
+                    mainSectionColor,
+                    mainSectionColor.withOpacity(1),
+                    mainSectionColor.withOpacity(1),
+                    mainSectionColor.withOpacity(0.5),
+                    mainSectionColor.withOpacity(0.5),
                   ])),
               height: double.infinity,
               // width: double.infinity,
@@ -54,9 +57,9 @@ class OnBoardingScreen extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
           image: AssetImage('assets/images/backgroundloading.png'),
-          alignment: Alignment(0, 2.5),
+          alignment: Alignment(0, 1.8),
           fit: BoxFit.none,
-          scale: 0.5,
+          scale: 0.7,
         )),
         child: SafeArea(
           child: Center(
@@ -66,18 +69,16 @@ class OnBoardingScreen extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                    Colors.white,
-                    Colors.white.withOpacity(1),
-                    Colors.white.withOpacity(1),
-                    Colors.white.withOpacity(0.7),
-                    Colors.white.withOpacity(0.6),
+                    mainSectionColor,
+                    mainSectionColor.withOpacity(1),
+                    mainSectionColor.withOpacity(1),
+                    mainSectionColor.withOpacity(0.7),
+                    mainSectionColor.withOpacity(0.6),
                   ])),
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.center,
-                // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: 79.15,
+                    height: mainSectionSpacing * 10,
                   ),
                   Logo(
                     onboardingScreen: true,
@@ -90,29 +91,30 @@ class OnBoardingScreen extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline2?.copyWith(
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xff030F09),
-                        fontFamily: 'Nunito-SemiBold'),
+                        color: OnboardingColor.titleOnboardingColor,
+                        fontFamily: AppConstants.fontSemiBold),
                   ),
                   SizedBox(
-                    height: 8,
+                    height: mainSectionSpacing,
                   ),
                   Text(
                     OnBoarding.subtitleOnBoarding,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.subtitle2?.copyWith(
                         fontWeight: FontWeight.normal,
-                        fontFamily: 'Nunito-Regular',
-                        color: Color(0xffA8A8A8)),
+                        fontFamily: AppConstants.fontRegular,
+                        color: OnboardingColor.subTitleOnboardingColor),
                   ),
                   SizedBox(
-                    height: 34,
+                    height: mainSectionSpacing * 4.25,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextButton(
                         style: TextButton.styleFrom(
-                          backgroundColor: Color(0xff30be76),
+                          backgroundColor:
+                              OnboardingColor.backgroundColorButton,
                           minimumSize: Size(widthsizebutton, heightsizebutton),
                         ),
                         onPressed: () {
@@ -121,20 +123,20 @@ class OnBoardingScreen extends StatelessWidget {
                         child: Text(
                           OnBoarding.buttonJoinScracth,
                           style: Theme.of(context).textTheme.button?.copyWith(
-                                color: Colors.white,
-                                fontFamily: 'Nunito-Bold',
+                                color: mainSectionColor,
+                                fontFamily: AppConstants.fontBold,
                               ),
                         ),
                       ),
                       SizedBox(
-                        width: 20,
+                        width: mainSectionSpacing * 2.5,
                       ),
                       OutlinedButton(
                           style: OutlinedButton.styleFrom(
                             minimumSize:
                                 Size(widthsizebutton, heightsizebutton),
                             side: BorderSide(
-                              color: Color(0xff30be76),
+                              color: OnboardingColor.backgroundColorButton,
                             ),
                           ),
                           onPressed: () {
@@ -145,8 +147,9 @@ class OnBoardingScreen extends StatelessWidget {
                                   .textTheme
                                   .button
                                   ?.copyWith(
-                                      color: Color(0xff30be76),
-                                      fontFamily: 'Nunito-Bold')))
+                                      color:
+                                          OnboardingColor.backgroundColorButton,
+                                      fontFamily: AppConstants.fontBold)))
                     ],
                   ),
                   Spacer(

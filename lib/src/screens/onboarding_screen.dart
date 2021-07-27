@@ -6,8 +6,6 @@ import '../constants/constants_color.dart';
 import '../widgets/logo.dart';
 
 class OnBoardingScreen extends StatelessWidget {
-  const OnBoardingScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     double widthsizebutton = 239;

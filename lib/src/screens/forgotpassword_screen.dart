@@ -11,99 +11,97 @@ class ForgotPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Responsive(
-            mobile: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 65,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25),
-                  child: Logo(
-                    onboardingScreen: false,
-                    tabletScreen: false,
+        child: SingleChildScrollView(
+          child: Responsive(
+              mobile: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 65,
                   ),
-                ),
-                SizedBox(
-                  height: 41,
-                ),
-                BoxResetPassword(),
-              ],
-            ),
-            tablet: Stack(
-              children: [
-                Opacity(
-                  opacity: 0.7,
-                  child: Image.asset(
-                    'assets/images/login_background.jpeg',
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    height: double.infinity,
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Colors.white.withOpacity(0),
-                          Colors.white.withOpacity(0.5),
-                          Colors.white.withOpacity(0.7),
-                          Colors.white.withOpacity(1),
-                        ]),
-                  ),
-                ),
-                Center(
-                    child: Column(
-                  children: [
-                    Spacer(),
-                    Logo(
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25),
+                    child: Logo(
                       onboardingScreen: false,
-                      tabletScreen: true,
+                      tabletScreen: false,
                     ),
-                    Spacer(),
-                    Text(
-                      ForgotPassword.titleResetPassword,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline5
-                          ?.copyWith(fontFamily: AppConstants.fontRegular),
+                  ),
+                  SizedBox(
+                    height: 41,
+                  ),
+                  BoxResetPassword(),
+                ],
+              ),
+              tablet: Stack(
+                children: [
+                  Opacity(
+                    opacity: 0.7,
+                    child: Image.asset(
+                      'assets/images/login_background.jpeg',
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      height: double.infinity,
                     ),
-                    SizedBox(
-                      height: 40,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Colors.white.withOpacity(0),
+                            Colors.white.withOpacity(0.5),
+                            Colors.white.withOpacity(0.7),
+                            Colors.white.withOpacity(1),
+                          ]),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),
+                  Center(
+                      child: Column(
+                    children: [
+                      Spacer(),
+                      Logo(
+                        onboardingScreen: false,
+                        tabletScreen: true,
                       ),
-                      height: 547,
-                      width: MediaQuery.of(context).size.width / 2,
-                      child: BoxResetPassword(),
-                    ),
-                    Spacer(
-                      flex: 2,
-                    )
-                  ],
-                ))
-              ],
-            )),
+                      Spacer(),
+                      Text(
+                        ForgotPassword.titleResetPassword,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline5
+                            ?.copyWith(fontFamily: AppConstants.fontRegular),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                        ),
+                        height: 547,
+                        width: MediaQuery.of(context).size.width / 2,
+                        child: BoxResetPassword(),
+                      ),
+                      Spacer(
+                        flex: 2,
+                      )
+                    ],
+                  ))
+                ],
+              )),
+        ),
       ),
     );
   }
 }
 
 class BoxResetPassword extends StatelessWidget {
-  const BoxResetPassword({
-    Key? key,
-  }) : super(key: key);
-
+  final TextEditingController _email = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final auth = FirebaseAuth.instance;
-    final _email = TextEditingController();
     double sizeTitleResetPassword;
     double spacingHeadTitle;
     double spacingSubTitle;
@@ -158,7 +156,7 @@ class BoxResetPassword extends StatelessWidget {
                 fontSize: 15),
           ),
           TextField(
-            controller: _email,
+            // controller: _email,
             keyboardType: TextInputType.emailAddress,
             autofocus: true,
             cursorColor: ForgotPasswordColor.underLineColor,
@@ -187,6 +185,7 @@ class BoxResetPassword extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8))),
               onPressed: () {
+                // sendMess();
                 auth.sendPasswordResetEmail(email: _email.text);
               },
               child: Text(
@@ -200,4 +199,8 @@ class BoxResetPassword extends StatelessWidget {
       ),
     );
   }
+
+  // void sendMess() {
+  //   print(_email.text);
+  // }
 }

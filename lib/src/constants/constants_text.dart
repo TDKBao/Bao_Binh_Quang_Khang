@@ -6,6 +6,7 @@ class ForgotPassword {
       "Enter the email associated with your account and we'll send and email with a link to reset your password.";
   static const String emailAddress = "Enail address";
   static const String buttonSend = "Send";
+  static const String titleHeadStartScratch = "Start from Sratch";
 }
 
 class SignUpText {}

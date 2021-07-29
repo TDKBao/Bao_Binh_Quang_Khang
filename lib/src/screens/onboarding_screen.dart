@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/responsive.dart';
+import '../widgets/logo.dart';
 import '../constants/constants_text.dart';
 import '../constants/constants_color.dart';
-import '../widgets/logo.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   @override
@@ -12,7 +12,6 @@ class OnBoardingScreen extends StatelessWidget {
     double heightsizebutton = 50;
     Color mainSectionColor = Colors.white;
     double mainSectionSpacing = 8;
-
     return Responsive(
       mobile: Container(
         height: double.infinity,

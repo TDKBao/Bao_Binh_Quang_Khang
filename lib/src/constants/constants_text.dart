@@ -6,13 +6,9 @@ class OnBoarding {
   static const String buttonJoinScracth = "Join Scratch";
   static const String buttonLearnMore = "Learn more";
 }
-
 class ForgotPassword {}
-
 class SignUpText {}
-
 class LoginText {}
-
 class AppConstants {
   static const String fontRegular = "Nunito-Reqular";
   static const String fontBlack = "Nunito-Black";

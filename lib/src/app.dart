@@ -14,7 +14,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       routes: {
         // '/': (context) => OnBoardingScreen(),
-        // '/login': (context) => LoginScreen(),
+        '/login': (context) => LoginScreen(),
         // '/signup': (context) => SignUpScreen(),
         // '/forgotpassword': (context) => ForgotPasswordScreen(),
 

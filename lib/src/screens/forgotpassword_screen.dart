@@ -1,12 +1,16 @@
+import 'dart:math';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/src/constants/constants_color.dart';
+import 'package:mobile_app/src/utils/validator.dart';
 
 import '../widgets/logo.dart';
 import '../constants/constants_text.dart';
 import '../widgets/responsive.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
+  // final _email = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,11 +101,23 @@ class ForgotPasswordScreen extends StatelessWidget {
   }
 }
 
-class BoxResetPassword extends StatelessWidget {
-  final TextEditingController _email = TextEditingController();
+class BoxResetPassword extends StatefulWidget {
+  @override
+  _BoxResetPasswordState createState() => _BoxResetPasswordState();
+}
+
+class _BoxResetPasswordState extends State<BoxResetPassword> {
+  final _email = TextEditingController();
+  final auth = FirebaseAuth.instance;
+
+  @override
+  void dispose() {
+    _email.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final auth = FirebaseAuth.instance;
     double sizeTitleResetPassword;
     double spacingHeadTitle;
     double spacingSubTitle;
@@ -156,7 +172,7 @@ class BoxResetPassword extends StatelessWidget {
                 fontSize: 15),
           ),
           TextField(
-            // controller: _email,
+            controller: _email,
             keyboardType: TextInputType.emailAddress,
             autofocus: true,
             cursorColor: ForgotPasswordColor.underLineColor,
@@ -166,13 +182,16 @@ class BoxResetPassword extends StatelessWidget {
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
                   color: ForgotPasswordColor.underLineColor,
+                  // color: checkColor(true) == true
+                  //     ? ForgotPasswordColor.underLineColor
+                  //     : Colors.red,
                   width: 2,
                 ),
               ),
             ),
             style: Theme.of(context).textTheme.bodyText1!.copyWith(
                 fontFamily: AppConstants.fontRegular,
-                color: ForgotPasswordColor.subTitleForgotColor,
+                // color: ForgotPasswordColor.subTitleForgotColor,
                 fontSize: 16.5),
           ),
           SizedBox(
@@ -185,8 +204,8 @@ class BoxResetPassword extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8))),
               onPressed: () {
-                // sendMess();
-                auth.sendPasswordResetEmail(email: _email.text);
+                sendMess();
+                // auth.sendPasswordResetEmail(email: _email.text);
               },
               child: Text(
                 ForgotPassword.buttonSend,
@@ -200,7 +219,13 @@ class BoxResetPassword extends StatelessWidget {
     );
   }
 
-  // void sendMess() {
-  //   print(_email.text);
-  // }
+  sendMess() {
+    final _isValidEmail = Validators.isValidEmail(_email.text);
+
+    if (_isValidEmail) {
+      auth
+          .sendPasswordResetEmail(email: _email.text)
+          .whenComplete(() => Navigator.of(context).pushNamed('/login'));
+    } else {}
+  }
 }
